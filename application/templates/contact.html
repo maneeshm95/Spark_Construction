@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block body %}
+<div class="container-padding">
+<div class="container">
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur enim, laboriosam mollitia necessitatibus quia. Architecto beatae dolorum explicabo, illo in odio optio quaerat similique tenetur voluptatum. Eius, mollitia nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto culpa minus nisi perferendis provident quidem ratione repudiandae unde veniam vero. Aperiam commodi corporis earum enim fugit, ipsa praesentium recusandae repellendus. </p>
+    <div class="row">
+        <div class="col-md-6">
+            <form role="form" method="post">
+                {{ form.hidden_tag() }}
+                {{ wtf.form_field(form.name, class='form-control') }}
+                {{ wtf.form_field(form.phoneNumber, class='form-control') }}
+                {{ wtf.form_field(form.description, class='form-control') }}
+                {{ wtf.form_field(form.submit, class='btn btn-primary') }}
+            </form>
+
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

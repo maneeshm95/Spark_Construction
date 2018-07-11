@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block style %}
+.card{
+  width: 18rem;
+}
+
+
+.card-img-top{
+  width: 100%;
+  max-height: 16vw;
+  object-fit: cover;
+}
+
+{% endblock %}
+
+{% block body %}
+<div class="container-padding">
+<div class="container">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deserunt dolore et harum id illo obcaecati, placeat, quidem quos recusandae sapiente vel! At, commodi deleniti enim modi nemo reiciendis veritatis.</p>
+
+
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="../static/images/dry_wall_installation.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Dry Wall Installation</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores ea nesciunt nostrum possimus quis vel velit veritatis. Laboriosam pariatur sed vero? Asperiores assumenda esse, fugiat illo perspiciatis ratione velit.</p>
+      </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="../static/images/deck_construction.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Roof Job</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem praesentium quae ullam vel. Ad esse est fuga laboriosam modi neque odit praesentium totam veniam voluptatem. Eligendi hic nesciunt reprehenderit suscipit.</p>
+      </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="../static/images/deck_construction.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Deck Construction</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque delectus fuga impedit molestias necessitatibus odio placeat quo saepe voluptates? Blanditiis exercitationem, fugiat ipsa libero nemo nulla odit veritatis. Ipsa, suscipit?</p>
+      </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}

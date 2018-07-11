@@ -1,0 +1,14 @@
+New Contact Request,
+
+The following individual is inquiring about a service.
+<p>{{ date }}
+Contact Name: {{ name }}
+
+Phone Number: {{ phone_number }}
+
+Information Request: {{ description }}
+
+
+
+
+

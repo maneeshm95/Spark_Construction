@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block style %}
+        .jumbotron{
+            background-image: url("../static/images/construction_image.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: orange;
+            background-size: cover;
+
+        }
+        .jumbotron div{
+            background-color: rgba(201, 76, 76, 0.8);
+        }
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Fluid jumbotron</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet autem culpa cupiditate debitis laboriosam nemo? Eos est explicabo laborum maiores necessitatibus non odit optio porro reprehenderit. Doloremque, repellat velit?</p>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet autem culpa cupiditate debitis laboriosam nemo? Eos est explicabo laborum maiores necessitatibus non odit optio porro reprehenderit. Doloremque, repellat velit?</p>
+
+    </div>
+</div>
+
+<div class="container-padding">
+<div class="container">
+    <h1>Example Page Header</h1>
+    <hr>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius incidunt iure necessitatibus nulla, obcaecati quibusdam quidem sed voluptatem! Aut commodi cumque cupiditate explicabo fugit incidunt laboriosam mollitia perferendis quidem veniam.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto corporis cumque debitis delectus deleniti dolorum error esse eum illo impedit inventore, iusto nihil, nisi odit, quam ratione sequi tempora voluptatem.</p>
+</div>
+</div>
+{% endblock %}

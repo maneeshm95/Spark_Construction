@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/styles.css') }}">
+
+    <style>
+        .navbar{
+            box-shadow: 0 6px 6px -6px #999;
+            background-color: #545454;
+        }
+        #spark_logo{
+            width: 84px;
+            height: 45px;
+        }
+        #footer{
+            background-color: #545454;
+            padding-top: 2em;
+            margin-top: 3em;
+            color: white;
+        }
+
+        .heading{
+            background-color: #4282cb;
+            color: white;
+        }
+        .container-padding{
+           padding: 1em 0em;
+           margin-bottom: 2em;
+        }
+
+        {% block style %} {% endblock %}
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="{{ url_for('index') }}"><img id="spark_logo" src="../static/images/spark_logo.png" alt="Spark Construction Logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('index') }}">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('services') }}">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('portfolio') }}">Portfolio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Management</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% if current_user.is_anonymous %}
+            <a class="dropdown-item" href="{{ url_for('login') }}">Log In</a>
+            {% else %}
+            <a class="dropdown-item" href="{{ url_for('logout') }}">Log Out</a>
+            <a class="dropdown-item" href="{{ url_for('portfolio_entry') }}">New Entry</a>
+            {% endif %}
+        </div>
+      </li>
+    </ul>
+
+
+  </div>
+</nav>
+
+{% if header %}
+<div class="heading" class="container-fluid">
+    <div class ="container-padding">
+        <div class="container">
+              <h1>{{ header }}</h1>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+         <div class="alert alert-warning alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+             {{ message }}
+         </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+{% block body %} {% endblock %}
+
+
+
+<div id="footer" class="container-fluid">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../static/images/spark_logo.png" width="168px" height="90px" alt="Spark Construction Logo">
+        </div>
+        <div class="col-md-6 align-self-end">
+            <ul id="footer-nav" class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('services') }}">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+              </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <br>
+            <p>Lorem ipsum<br>Independent Contractor<br>813-374-3838
+            </p>
+         </div>
+    </div>
+</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
